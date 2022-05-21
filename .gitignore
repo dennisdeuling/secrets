@@ -14,5 +14,5 @@ web-build/
 .DS_Store
 
 .idea
-.expo
+.expo*
 .env
