@@ -1,0 +1,45 @@
+[debug] [2022-05-21T12:23:04.006Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T12:23:04.009Z] Command:       /usr/local/Cellar/node@16/16.15.0/bin/node /usr/local/bin/firebase projects:list
+[debug] [2022-05-21T12:23:04.009Z] CLI Version:   11.0.0
+[debug] [2022-05-21T12:23:04.009Z] Platform:      darwin
+[debug] [2022-05-21T12:23:04.010Z] Node Version:  v16.15.0
+[debug] [2022-05-21T12:23:04.010Z] Time:          Sat May 21 2022 14:23:04 GMT+0200 (Mitteleuropäische Sommerzeit)
+[debug] [2022-05-21T12:23:04.011Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T12:23:04.018Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T12:23:04.018Z] > authorizing via signed-in user (dennis.deuling@gmail.com)
+[debug] [2022-05-21T12:23:04.024Z] > refreshing access token with scopes: []
+[debug] [2022-05-21T12:23:04.024Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-05-21T12:23:04.250Z] <<< HTTP RESPONSE 400 {"pragma":"no-cache","date":"Sat, 21 May 2022 12:23:04 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-05-21T12:23:04.254Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2022-05-21T12:23:04.432Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 401
+[debug] [2022-05-21T12:23:04.432Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2022-05-21T12:23:04.433Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-05-21T12:23:04.584Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:47:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2022-05-21T12:24:34.242Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T12:24:34.245Z] Command:       /usr/local/Cellar/node@16/16.15.0/bin/node /usr/local/bin/firebase init
+[debug] [2022-05-21T12:24:34.245Z] CLI Version:   11.0.0
+[debug] [2022-05-21T12:24:34.245Z] Platform:      darwin
+[debug] [2022-05-21T12:24:34.245Z] Node Version:  v16.15.0
+[debug] [2022-05-21T12:24:34.246Z] Time:          Sat May 21 2022 14:24:34 GMT+0200 (Mitteleuropäische Sommerzeit)
+[debug] [2022-05-21T12:24:34.247Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T12:24:34.253Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T12:24:34.254Z] > authorizing via signed-in user (dennis.deuling@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/dennisdeuling/WebstormProjects/playground/secrets
+
