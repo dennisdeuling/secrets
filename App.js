@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SecretList from './screens/SecretList';
+import SecretDetailScreen from './screens/SecretDetailScreen';
+import data from './data/data';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const Stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => {
+	const [posts, setPosts] = useState(null);
+
+	useEffect(() => {
+		setPosts(data);
+		// fetch('https://jsonplaceholder.typicode.com/posts')
+		// 	.then(response => response.json())
+		// 	.then(json => setPosts(json))
+		// 	.catch(error => error);
+	}, []);
+
+	return (
+		<NavigationContainer>
+			<Stack.Navigator initialRouteName="SecretList">
+				<Stack.Screen name="SecretList">
+					{props => <SecretList {...props} posts={posts} />}
+				</Stack.Screen>
+				<Stack.Screen name="SecretDailScreen" component={SecretDetailScreen} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+};
+
+export default App;
