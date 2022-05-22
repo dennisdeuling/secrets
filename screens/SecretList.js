@@ -1,7 +1,22 @@
-import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
+import React, { useState } from 'react';
+import {
+	StyleSheet,
+	View,
+	Text,
+	SafeAreaView,
+	ScrollView,
+	ImageBackground,
+	TouchableOpacity
+} from 'react-native';
 
-const SecretList = ({ navigation, posts }) => {
+import data from '../data/data';
+
+const SecretList = ({ navigation }) => {
+	const [posts, setPosts] = useState(data);
+	const navDetails = post => {
+		return navigation.navigate('SecretDailScreen', { post });
+	};
+	console.log(posts);
 	return (
 		<SafeAreaView>
 			<ScrollView>
@@ -10,13 +25,15 @@ const SecretList = ({ navigation, posts }) => {
 						posts.map(post => {
 							return (
 								<View key={post.id} style={styles.secretCard}>
-									<ImageBackground
-										source={{ uri: post.image }}
-										resizeMode="cover"
-										style={styles.image}
-									>
-										<Text style={styles.text}>{post.title}</Text>
-									</ImageBackground>
+									<TouchableOpacity onPress={() => navDetails(post)}>
+										<ImageBackground
+											source={{ uri: post.image }}
+											resizeMode="cover"
+											style={styles.image}
+										>
+											<Text style={styles.text}>{post.title}</Text>
+										</ImageBackground>
+									</TouchableOpacity>
 								</View>
 							);
 						})}
@@ -34,13 +51,13 @@ const styles = StyleSheet.create({
 	},
 	secretCard: {
 		justifyContent: 'center',
-		width: 214,
+		width: '50%',
 		height: 200
 	},
 	image: {
 		justifyContent: 'center',
-		width: 214,
-		height: 200
+		width: '100%',
+		height: '100%'
 	},
 	text: {
 		fontSize: 30,
@@ -48,4 +65,5 @@ const styles = StyleSheet.create({
 		color: 'white'
 	}
 });
+
 export default SecretList;
