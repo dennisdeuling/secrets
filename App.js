@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Screens
-import SecretListScreen from './screens/SecretList';
+import SecretListScreen from './screens/SecretListScreen';
 import SecretDetailScreen from './screens/SecretDetailScreen';
 
 const HomeStack = createNativeStackNavigator();
@@ -24,7 +24,7 @@ const App = () => {
 		<NavigationContainer>
 			<BottomStack.Navigator>
 				<BottomStack.Screen
-					name="SecretListScreen"
+					name="SecretList"
 					component={HomeStackScreen}
 					options={{ headerShown: false }}
 				/>
