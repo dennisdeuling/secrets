@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, FlatList } from 'react-native';
 
-import data from '../data/data';
+import data from '../development/seed/data';
 import SecretListCard from '../components/secretlistcard/SecretListCard';
 
 const SecretListScreen = ({ navigation }) => {

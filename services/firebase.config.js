@@ -1,7 +1,7 @@
-// import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 
 // Optionally import the services that you want to use
-//import {...} from "firebase/auth";
+import {getAuth, connectAuthEmulator} from "firebase/auth";
 //import {...} from "firebase/database";
 //import {...} from "firebase/firestore";
 //import {...} from "firebase/functions";
@@ -18,5 +18,8 @@
 // 	appId: 'app-id',
 // 	measurementId: 'G-measurement-id'
 // };
+
+const auth = getAuth();
+connectAuthEmulator(auth, "http://localhost:9099");
 
 // initializeApp(firebaseConfig);
